@@ -1,6 +1,8 @@
+/* Defaults */
+
 :root {
   --bg-color: #aaa;
-  --nav-main-color: #000;
+  --main-color: #000;
   --nav-bg-color: #777;
 }
 
@@ -14,6 +16,8 @@ a {
   text-decoration: none;
 }
 
+/* Grid */
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
@@ -21,21 +25,21 @@ a {
 }
 
 .grid-item {
+  background-color: var(--nav-bg-color);
 }
+
+/* Header */
 
 .grid-header {
   grid-column-start: 1;
   grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 1;
   
   display: block;
   text-align: center;
+  color: var(--main-color);
 }
 
-.grid-header h1 {
-  color: var(--nav-main-color)
-}
+/* Navigation */
 
 .grid-nav {
   grid-column-start: 1;
@@ -53,7 +57,7 @@ a {
 
 .grid-nav li {
   list-style: none;
-  color: var(--nav-main-color);
+  color: var(--main-color);
   border: solid;
   border-width: 0.18em;
   border-radius: 0.4em;
@@ -66,4 +70,49 @@ a {
   right: 1em;
   top: .5em;
   border: dashed;
+}
+
+/* Sidebar */
+
+.grid-sidebar {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+
+  background-color: var(--nav-bg-color);
+  border-style: solid;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.grid-sidebar ul{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.grid-sidebar li {
+  list-style: none;
+}
+
+/* Main */
+
+.grid-main {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  
+  background-color: var(--nav-bg-color);
+  margin: 1em;
+}
+
+.grid-footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 4;
+
+  text-align: center;
 }
